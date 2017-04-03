@@ -1,0 +1,64 @@
+<svg height="974" width="720" xmlns="http://www.w3.org/2000/svg">
+<rect height="974" fill="#555" width="720"></rect>
+<text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
+<tspan x="10" y="26">├── UNMET PEER DEPENDENCY grunt@&gt;= 0.4.5</tspan>
+<tspan x="10" y="42">└─┬ grunt-contrib-compass@1.1.1 </tspan>
+<tspan x="10" y="58">  ├── async@1.5.2 </tspan>
+<tspan x="10" y="74">  ├─┬ bin-version-check@2.1.0 </tspan>
+<tspan x="10" y="90">  │ ├─┬ bin-version@1.0.4 </tspan>
+<tspan x="10" y="106">  │ │ └─┬ find-versions@1.2.1 </tspan>
+<tspan x="10" y="122">  │ │   ├── array-uniq@1.0.3 </tspan>
+<tspan x="10" y="138">  │ │   ├── get-stdin@4.0.1 </tspan>
+<tspan x="10" y="154">  │ │   ├─┬ meow@3.7.0 </tspan>
+<tspan x="10" y="170">  │ │   │ ├─┬ camelcase-keys@2.1.0 </tspan>
+<tspan x="10" y="186">  │ │   │ │ └── camelcase@2.1.1 </tspan>
+<tspan x="10" y="202">  │ │   │ ├── decamelize@1.2.0 </tspan>
+<tspan x="10" y="218">  │ │   │ ├─┬ loud-rejection@1.6.0 </tspan>
+<tspan x="10" y="234">  │ │   │ │ ├─┬ currently-unhandled@0.4.1 </tspan>
+<tspan x="10" y="250">  │ │   │ │ │ └── array-find-index@1.0.2 </tspan>
+<tspan x="10" y="266">  │ │   │ │ └── signal-exit@3.0.2 </tspan>
+<tspan x="10" y="282">  │ │   │ ├── map-obj@1.0.1 </tspan>
+<tspan x="10" y="298">  │ │   │ ├─┬ normalize-package-data@2.3.6 </tspan>
+<tspan x="10" y="314">  │ │   │ │ ├── hosted-git-info@2.4.1 </tspan>
+<tspan x="10" y="330">  │ │   │ │ ├─┬ is-builtin-module@1.0.0 </tspan>
+<tspan x="10" y="346">  │ │   │ │ │ └── builtin-modules@1.1.1 </tspan>
+<tspan x="10" y="362">  │ │   │ │ └─┬ validate-npm-package-license@3.0.1 </tspan>
+<tspan x="10" y="378">  │ │   │ │   ├─┬ spdx-correct@1.0.2 </tspan>
+<tspan x="10" y="394">  │ │   │ │   │ └── spdx-license-ids@1.2.2 </tspan>
+<tspan x="10" y="410">  │ │   │ │   └── spdx-expression-parse@1.0.4 </tspan>
+<tspan x="10" y="426">  │ │   │ ├── object-assign@4.1.1 </tspan>
+<tspan x="10" y="442">  │ │   │ ├─┬ read-pkg-up@1.0.1 </tspan>
+<tspan x="10" y="458">  │ │   │ │ ├─┬ find-up@1.1.2 </tspan>
+<tspan x="10" y="474">  │ │   │ │ │ ├── path-exists@2.1.0 </tspan>
+<tspan x="10" y="490">  │ │   │ │ │ └─┬ pinkie-promise@2.0.1 </tspan>
+<tspan x="10" y="506">  │ │   │ │ │   └── pinkie@2.0.4 </tspan>
+<tspan x="10" y="522">  │ │   │ │ └─┬ read-pkg@1.1.0 </tspan>
+<tspan x="10" y="538">  │ │   │ │   ├─┬ load-json-file@1.1.0 </tspan>
+<tspan x="10" y="554">  │ │   │ │   │ ├── graceful-fs@4.1.11 </tspan>
+<tspan x="10" y="570">  │ │   │ │   │ ├─┬ parse-json@2.2.0 </tspan>
+<tspan x="10" y="586">  │ │   │ │   │ │ └─┬ error-ex@1.3.1 </tspan>
+<tspan x="10" y="602">  │ │   │ │   │ │   └── is-arrayish@0.2.1 </tspan>
+<tspan x="10" y="618">  │ │   │ │   │ ├── pify@2.3.0 </tspan>
+<tspan x="10" y="634">  │ │   │ │   │ └─┬ strip-bom@2.0.0 </tspan>
+<tspan x="10" y="650">  │ │   │ │   │   └── is-utf8@0.2.1 </tspan>
+<tspan x="10" y="666">  │ │   │ │   └── path-type@1.1.0 </tspan>
+<tspan x="10" y="682">  │ │   │ ├─┬ redent@1.0.0 </tspan>
+<tspan x="10" y="698">  │ │   │ │ ├─┬ indent-string@2.1.0 </tspan>
+<tspan x="10" y="714">  │ │   │ │ │ └─┬ repeating@2.0.1 </tspan>
+<tspan x="10" y="730">  │ │   │ │ │   └─┬ is-finite@1.0.2 </tspan>
+<tspan x="10" y="746">  │ │   │ │ │     └── number-is-nan@1.0.1 </tspan>
+<tspan x="10" y="762">  │ │   │ │ └── strip-indent@1.0.1 </tspan>
+<tspan x="10" y="778">  │ │   │ └── trim-newlines@1.0.0 </tspan>
+<tspan x="10" y="794">  │ │   └── semver-regex@1.0.0 </tspan>
+<tspan x="10" y="810">  │ ├── minimist@1.2.0 </tspan>
+<tspan x="10" y="826">  │ ├── semver@4.3.6 </tspan>
+<tspan x="10" y="842">  │ └─┬ semver-truncate@1.1.2 </tspan>
+<tspan x="10" y="858">  │   └── semver@5.3.0 </tspan>
+<tspan x="10" y="874">  ├── dargs@2.1.0 </tspan>
+<tspan x="10" y="890">  ├── onetime@1.1.0 </tspan>
+<tspan x="10" y="906">  ├─┬ tmp@0.0.28 </tspan>
+<tspan x="10" y="922">  │ └── os-tmpdir@1.0.2 </tspan>
+<tspan x="10" y="938">  └─┬ which@1.2.14 </tspan>
+<tspan x="10" y="954">    └── isexe@2.0.0</tspan>
+</text>
+</svg>
