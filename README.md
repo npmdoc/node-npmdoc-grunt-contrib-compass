@@ -3,7 +3,7 @@
 
 [![NPM](https://nodei.co/npm/grunt-contrib-compass.png?downloads=true)](https://www.npmjs.com/package/grunt-contrib-compass)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-grunt-contrib-compass/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-grunt-contrib-compass_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-grunt-contrib-compass/build..beta..travis-ci.org/apidoc.html)
+[![apidoc](https://npmdoc.github.io/node-npmdoc-grunt-contrib-compass/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-grunt-contrib-compass_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-grunt-contrib-compass/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-grunt-contrib-compass/build/screenCapture.npmPackageListing.svg)
 
