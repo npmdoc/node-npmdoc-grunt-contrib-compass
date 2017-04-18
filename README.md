@@ -1,9 +1,14 @@
-# api documentation for  [grunt-contrib-compass (v1.1.1)](https://github.com/gruntjs/grunt-contrib-compass#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-grunt-contrib-compass.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-grunt-contrib-compass) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-grunt-contrib-compass.svg)](https://travis-ci.org/npmdoc/node-npmdoc-grunt-contrib-compass)
+# npmdoc-grunt-contrib-compass
+
+#### api documentation for  [grunt-contrib-compass (v1.1.1)](https://github.com/gruntjs/grunt-contrib-compass#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-grunt-contrib-compass.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-grunt-contrib-compass) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-grunt-contrib-compass.svg)](https://travis-ci.org/npmdoc/node-npmdoc-grunt-contrib-compass)
+
 #### Compile Sass to CSS using Compass
 
-[![NPM](https://nodei.co/npm/grunt-contrib-compass.png?downloads=true)](https://www.npmjs.com/package/grunt-contrib-compass)
+[![NPM](https://nodei.co/npm/grunt-contrib-compass.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/grunt-contrib-compass)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-grunt-contrib-compass/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-grunt-contrib-compass_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-grunt-contrib-compass/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-grunt-contrib-compass/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-grunt-contrib-compass/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-grunt-contrib-compass/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-grunt-contrib-compass/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-grunt-contrib-compass/build/screenCapture.npmPackageListing.svg)
 
@@ -74,28 +79,22 @@
     "main": "tasks/compass.js",
     "maintainers": [
         {
-            "name": "tkellen",
-            "email": "tyler@sleekcode.net"
+            "name": "tkellen"
         },
         {
-            "name": "cowboy",
-            "email": "cowboy@rj3.net"
+            "name": "cowboy"
         },
         {
-            "name": "shama",
-            "email": "kyle@dontkry.com"
+            "name": "shama"
         },
         {
-            "name": "sindresorhus",
-            "email": "sindresorhus@gmail.com"
+            "name": "sindresorhus"
         },
         {
-            "name": "vladikoff",
-            "email": "vlad@vladikoff.com"
+            "name": "vladikoff"
         },
         {
-            "name": "jmeas",
-            "email": "jellyes2@gmail.com"
+            "name": "jmeas"
         }
     ],
     "name": "grunt-contrib-compass",
@@ -103,7 +102,6 @@
     "peerDependencies": {
         "grunt": ">= 0.4.5"
     },
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/gruntjs/grunt-contrib-compass.git"
@@ -114,16 +112,6 @@
     "version": "1.1.1"
 }
 ```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module grunt-contrib-compass](#apidoc.module.grunt-contrib-compass)
-
-
-
-# <a name="apidoc.module.grunt-contrib-compass"></a>[module grunt-contrib-compass](#apidoc.module.grunt-contrib-compass)
 
 
 
