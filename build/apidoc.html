@@ -72,22 +72,19 @@
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.grunt-contrib-compass.toString">
-            function <span class="apidocSignatureSpan">grunt-contrib-compass.</span>toString
-            <span class="apidocSignatureSpan">()</span>
-            </a>
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">grunt-contrib-compass.</span>compass</span>
 
         </li>
 
     </ol></li>
 
-    <li class="apidocModuleLi"><a href="#apidoc.module.grunt-contrib-compass.toString">module grunt-contrib-compass.toString</a><ol>
+    <li class="apidocModuleLi"><a href="#apidoc.module.grunt-contrib-compass.compass">module grunt-contrib-compass.compass</a><ol>
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.grunt-contrib-compass.toString.toString">
-            function <span class="apidocSignatureSpan">grunt-contrib-compass.</span>toString
-            <span class="apidocSignatureSpan">()</span>
+            <a class="apidocElementLiA" href="#apidoc.element.grunt-contrib-compass.compass.init">
+            function <span class="apidocSignatureSpan">grunt-contrib-compass.compass.</span>init
+            <span class="apidocSignatureSpan">(grunt)</span>
             </a>
 
         </li>
@@ -188,35 +185,155 @@
 
 
 
-    <h2>
-        <a href="#apidoc.element.grunt-contrib-compass.toString" id="apidoc.element.grunt-contrib-compass.toString">
-        function <span class="apidocSignatureSpan">grunt-contrib-compass.</span>toString
-        <span class="apidocSignatureSpan">()</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">toString = function () {
-    return text;
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
 
 </div>
 
 <div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.grunt-contrib-compass.toString" id="apidoc.module.grunt-contrib-compass.toString">module grunt-contrib-compass.toString</a></h1>
+<h1><a href="#apidoc.module.grunt-contrib-compass.compass" id="apidoc.module.grunt-contrib-compass.compass">module grunt-contrib-compass.compass</a></h1>
 
 
     <h2>
-        <a href="#apidoc.element.grunt-contrib-compass.toString.toString" id="apidoc.element.grunt-contrib-compass.toString.toString">
-        function <span class="apidocSignatureSpan">grunt-contrib-compass.</span>toString
-        <span class="apidocSignatureSpan">()</span>
+        <a href="#apidoc.element.grunt-contrib-compass.compass.init" id="apidoc.element.grunt-contrib-compass.compass.init">
+        function <span class="apidocSignatureSpan">grunt-contrib-compass.compass.</span>init
+        <span class="apidocSignatureSpan">(grunt)</span>
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>description and source-code<pre class="apidocCodePre">init = function (grunt) {
+  var fs = require(&#x27;fs&#x27;);
+  var tmp = require(&#x27;tmp&#x27;);
+  var dargs = require(&#x27;dargs&#x27;);
+  var path = require(&#x27;path&#x27;);
+  var async = require(&#x27;async&#x27;);
+  var onetime = require(&#x27;onetime&#x27;);
+  var whichSync = require(&#x27;which&#x27;).sync;
+
+
+  var exports = {};
+
+  function camelCaseToUnderscore(str) {
+    return str
+      .replace(/([a-z])([A-Z])/g, &#x27;$1_$2&#x27;)
+      .toLowerCase();
+  }
+
+  // Extracts the options that cannot be used as CLI parameter but only
+  // as &#x27;raw&#x27; arguments.
+  // Returns an object: {raw: str, options: []} with the raw string to be
+  // used to generate a config and the list of used options.
+  exports.extractRawOptions = function extractRawOptions(options) {
+    var raw = options.raw || &#x27;&#x27;;
+    var supportedOptions = [
+      &#x27;css_path&#x27;,
+      &#x27;http_stylesheets_path&#x27;,
+      &#x27;sass_path&#x27;,
+      &#x27;images_path&#x27;,
+      &#x27;http_images_path&#x27;,
+      &#x27;generated_images_dir&#x27;,
+      &#x27;generated_images_path&#x27;,
+      &#x27;http_generated_images_path&#x27;,
+      &#x27;javascripts_path&#x27;,
+      &#x27;http_javascripts_path&#x27;,
+      &#x27;fonts_path&#x27;,
+      &#x27;http_fonts_path&#x27;,
+      &#x27;http_fonts_dir&#x27;,
+      &#x27;extensions_dir&#x27;,
+      &#x27;extension_path&#x27;,
+      &#x27;cache_dir&#x27;
+    ];
+
+    var usedOptions = Object.keys(options).filter(function (option) {
+      var underscoredOption = camelCaseToUnderscore(option);
+      if (supportedOptions.indexOf(underscoredOption) &#x3e;= 0) {
+        // naively escape single-quotes in the value
+        var value = options[option].replace(/&#x27;/g, &#x27;\\\&#x27;&#x27;);
+        raw += underscoredOption + &#x27; = \&#x27;&#x27; + value + &#x27;\&#x27;\n&#x27;;
+        delete options[option];
+
+        return true;
+      } else if (underscoredOption === &#x27;asset_cache_buster&#x27;) {
+        // Special handling for asset_cache_buster as it doesn&#x27;t take
+        // a string as argument, but either an inline-ruby block (which we don&#x27;t
+        // support) or a `:none` symbol to disable it.
+        if (options[option] === false) {
+          raw += underscoredOption + &#x27; :none&#x27; + &#x27;\n&#x27;;
+        }
+        delete options[option];
+        return true;
+      } else if (underscoredOption === &#x27;sprite_load_path&#x27;) {
+        // Special handling for sprite_load_path as it doesn&#x27;t take
+        // a string as argument, but an array or a string.
+        // Append the load paths in ruby via &#x3c;&#x3c;
+        // http://compass-style.org/blog/2012/02/01/compass-0-12-is-released/
+        var loadPath = options[option];
+        if (loadPath) {
+          loadPath = Array.isArray(loadPath) ? loadPath : [loadPath];
+          loadPath.forEach(function (path) {
+            // naively escape double-quotes in the value
+            path = path.replace(/&#x22;/g, &#x27;\\&#x22;&#x27;);
+            raw += underscoredOption + &#x27; &#x3c;&#x3c; &#x22;&#x27; + path + &#x27;&#x22;\n&#x27;;
+          });
+        }
+        delete options[option];
+        return true;
+      }
+    });
+
+    return {raw: raw, options: usedOptions};
+  };
+
+  // Create a function to add a banner, if requested through the options.
+  exports.buildBannerCallback = function (grunt, options) {
+    if (!options.specify || !options.banner) {
+      if (options.banner &#x26;&#x26; !options.specify) {
+        grunt.warn(&#x27;You can only use the `banner` option in combination with `specify.`&#x27;);
+      }
+      // Return a no-op if specify or banner aren&#x27;t set.
+      return function () {};
+    }
+
+    var srcFiles = grunt.file.expand({
+      filter: function (filePath) {
+        return path.basename(filePath)[0] !== &#x27;_&#x27;;
+      }
+    }, options.specify);
+
+    var banner = options.banner;
+    delete options.banner;
+
+    var destFiles = srcFiles.map(function (filename) {
+      return filename.replace(options.sassDir, options.cssDir).replace(/\.(css\.)?(scss|sass)$/i, &#x27;.css&#x27;);
+    });
+
+    return function () {
+      grunt.log.verbose.writeln(&#x27;Writing CSS banners.&#x27;);
+      async.map(destFiles, function (filename) {
+        grunt.log.verbose.writeln(&#x27;Writing CSS banner for &#x27; + filename);
+        var content = grunt.file.read(filename);
+        grunt.file.write(filename, banner + grunt.util.linefeed + content);
+      });
+    };
+  };
+
+  // Create a config file on the fly if there are arguments not supported as
+  // CLI, returns a function that run ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * Licensed under the MIT license.
+ */
+
+&#x27;use strict&#x27;;
+var binVersionCheck = require(&#x27;bin-version-check&#x27;);
+
+module.exports = function (grunt) {
+var compass = require(&#x27;./lib/compass&#x27;).<span class="apidocCodeKeywordSpan">init</span>(grunt);
+
+function compile(args, cb) {
+  grunt.log.verbose.writeln(&#x27;Running command: &#x27; + args.join(&#x27; &#x27;));
+  var child = grunt.util.spawn({
+    cmd: args.shift(),
+    args: args
+  }, function (err, result, code) {
+...</pre></li>
     </ul>
 
 
