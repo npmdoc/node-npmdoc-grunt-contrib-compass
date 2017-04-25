@@ -1,6 +1,6 @@
 # npmdoc-grunt-contrib-compass
 
-#### api documentation for  [grunt-contrib-compass (v1.1.1)](https://github.com/gruntjs/grunt-contrib-compass#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-grunt-contrib-compass.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-grunt-contrib-compass) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-grunt-contrib-compass.svg)](https://travis-ci.org/npmdoc/node-npmdoc-grunt-contrib-compass)
+#### basic api documentation for  [grunt-contrib-compass (v1.1.1)](https://github.com/gruntjs/grunt-contrib-compass#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-grunt-contrib-compass.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-grunt-contrib-compass) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-grunt-contrib-compass.svg)](https://travis-ci.org/npmdoc/node-npmdoc-grunt-contrib-compass)
 
 #### Compile Sass to CSS using Compass
 
@@ -109,7 +109,8 @@
     "scripts": {
         "test": "grunt test"
     },
-    "version": "1.1.1"
+    "version": "1.1.1",
+    "bin": {}
 }
 ```
 
